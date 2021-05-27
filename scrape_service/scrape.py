@@ -23,6 +23,6 @@ class Scraper:
             self.r.set(headline.text, str(headline))
     
     def mail_news(self):
-        news_links = {key: self.r.get(key).decode("utf-8") for key in self.r.keys()}
+        news_links = {key.decode("utf-8"): self.r.get(key).decode("utf-8") for key in self.r.keys()}
         if news_links:
             send_mail(news_links)
