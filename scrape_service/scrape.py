@@ -1,3 +1,4 @@
+import os
 import requests
 from bs4 import BeautifulSoup
 import redis
@@ -9,7 +10,7 @@ class Scraper:
         self.URL = URL
         self.keywords = keywords
         self.html = requests.get(self.URL).text
-        self.r = redis.Redis(host='localhost', port=6379, db=0)
+        self.r=redis.from_url(os.environ['REDISCLOUD_URL'])
 
     def fetch_headlines(self):
         soup = BeautifulSoup(self.html, 'html.parser')
