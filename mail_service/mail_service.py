@@ -22,9 +22,9 @@ def send_mail(links):
             <body>
                 Hello,
                 I hope you're having wonderful day today. As per your request, 
-                I have found {len(links.keys())} news that you might interesting to read today. Have fun.
+                I have found {len(links)} news that you might interesting to read today. Have fun.
                 <ul>
-                    {''.join(['<li><a href="'+ value +'">' + key + '</a></li>' for key,value in links.items()])}
+                    {''.join(['<li>' + link +  '</li>' for link in links])}
                 </ul>
                 <br></br>
                 <p>Made with love by <a href="https://linkedin.com/bistasulove">Sulove Bista</a><p>
