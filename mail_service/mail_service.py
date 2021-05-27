@@ -18,7 +18,7 @@ def send_mail(links):
     html = """
         <h4> %s links you might be interested in today: </h4>
         %s
-    """ % (len(links), '<br></br>'.join(links))
+    """ % (len(links), '<br/><br/>'.join(links))
     
     mime = MIMEText(html, 'html')
 

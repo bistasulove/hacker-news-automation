@@ -23,6 +23,6 @@ class Scraper:
             self.r.set(headline.text, str(headline))
     
     def mail_news(self):
-        news_links = [self.r.get(key) for key in self.r.keys()]
+        news_links = [str(self.r.get(key)) for key in self.r.keys()]
         if news_links:
             send_mail(news_links)
