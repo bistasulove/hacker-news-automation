@@ -7,9 +7,9 @@ from datetime import datetime
 from dotenv import load_dotenv
 load_dotenv()
 
-def send_mail(links):
+def send_mail(email, links):
     sender = 'newsdigestbysulove@gmail.com'
-    receiver = 'bistasulove@gmail.com'
+    receiver = email
     current_date = f"{datetime.today().strftime('%A, %b %d %Y')}"
 
     msg = MIMEMultipart('alternative')

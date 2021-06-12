@@ -1,0 +1,43 @@
+<!-- app/templates/base.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>{{ title }} | News Digest</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+</head>
+<body>
+    <div class="wrapper">
+      <div class="intro-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="intro-message">
+                        <h1>Hacker News Digest</h1>
+                        <h3>Get news headlines in your mail daily</h3>
+                        <hr class="intro-divider">
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div>
+                {% if content == 'success' %}
+                    <p class="success">Success</p> 
+                {% elif content == 'email exists' %}
+                    <p class="failure">The email already exists.</p>
+                {% elif content == 'email do not exist' %}
+                    <p class="failure">The email doesn't exist.</p>
+                {% else %}
+                    <p class="error">Some error occurred</p>
+                {% endif %}
+            </div>
+            <div>
+                <a href={{ url_for('index') }}> Home</a>
+            </div>
+        </div>
+      </div>
+      <div class="push"></div>
+    </div>
+</body>
+</html>
