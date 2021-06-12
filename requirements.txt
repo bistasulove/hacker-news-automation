@@ -13,7 +13,7 @@ httplib2==0.19.1
 idna==2.10
 itsdangerous==2.0.1
 Jinja2==3.0.1
-arkupSafe==2.0.1
+MarkupSafe==2.0.1
 oauth2client==4.1.3
 oauthlib==3.1.1
 pyasn1==0.4.8
