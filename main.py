@@ -70,7 +70,7 @@ def scrape():
         s.fetch_headlines()
         s.store_news()
         s.mail_news()
-    return "Successfully sent"
+    return redirect(url_for('success'))
 
 if __name__ == '__main__':
     app.run(host="0.0.0.0", port=5000, debug=True, threaded=True)

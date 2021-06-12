@@ -8,7 +8,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 def send_mail(email, links):
-    sender = 'newsdigestbysulove@gmail.com'
+    sender = os.environ.get('SENDER_EMAIL')
     receiver = email
     current_date = f"{datetime.today().strftime('%A, %b %d %Y')}"
 

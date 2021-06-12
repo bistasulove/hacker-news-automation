@@ -16,7 +16,7 @@ def get_sheet():
     client = gspread.authorize(creds)
 
     # Find a workbook by url
-    spreadsheet = client.open_by_url("https://docs.google.com/spreadsheets/d/1V3LDyl41IutCaYft7hY65-NSQrj741i0v0sgksBiL0c/edit#gid=0")
+    spreadsheet = client.open_by_url(os.environ.get('SHEETS_URL'))
     sheet = spreadsheet.sheet1
     return sheet
 
